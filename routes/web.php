@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route:: get('index', [MainController::class,'homePage'])->name('homePage');
+Route:: get('about', [MainController::class,'aboutPage'])->name('about');
+Route:: get('blog', [MainController::class,'blogPage'])->name('blog');
+Route:: get('contact', [MainController::class,'contactPage'])->name('contact');
+Route:: get('listing', [MainController::class,'listingPage'])->name('listing');
+Route:: get('single', [MainController::class,'singlePage'])->name('single');
+Route:: get('testimonials', [MainController::class,'testimonialsPage'])->name('testimonials');
